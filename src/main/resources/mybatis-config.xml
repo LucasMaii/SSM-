@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    
+    <!--<settings>-->
+        <!--<setting name="logImpl" value="STDOUT_LOGGING"/>-->
+    <!--</settings>-->
+
+    <!--起别名, 配置bean的时候可以直接写类名，不需要写com.*.*之类的-->
+    <typeAliases>
+        <package name="com.mai.pojo"/>
+    </typeAliases>
+
+    <mappers>
+        <package name="com.mai.dao"/>
+        <!--<mapper resource="com.mai.dao.UserMapper"/>-->
+        <!--<mapper resource="com/mai/dao/UserMapper.xml"/>-->
+    </mappers>
+
+</configuration>

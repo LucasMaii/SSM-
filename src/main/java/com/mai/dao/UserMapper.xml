@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+mapper 用于定义一个映射配置文件的根节点
+namespace属性是用来配置命名空间，主要进行session级别的缓存管理
+命名空间默认情况下，使用我们当前操作的实体类的全路径
+-->
+<mapper namespace="com.mai.dao.UserMapper">
+
+    <!--判断用户是否存在-->
+    <select id="isUserIdExist" parameterType="java.lang.String" resultType="java.lang.Boolean">
+        select count(1)
+          from users
+        where id = #{id}
+    </select>
+
+    <!--根据ID获取User信息-->
+    <select id="getUserInfoById" parameterType="java.lang.String" resultType="User">
+        select * from users where id = #{id}
+    </select>
+
+</mapper>
